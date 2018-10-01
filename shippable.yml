@@ -19,7 +19,7 @@ services:
 build:
   pre_ci_boot:
     image_name: drydock/c7all
-    image_tag: master
+    image_tag: v6.9.4
     pull: true
     
   ci:
@@ -37,7 +37,6 @@ build:
     - echo SHIPPABLE_SELENIUM_v=$SHIPPABLE_SELENIUM_BINARY    
     - echo SHIPPABLE_SQLITE_BINARY=$SHIPPABLE_SQLITE_BINARY
 
-   # - cassandra -v
     - memcached -V
     - riak version
     - which mysql
@@ -48,7 +47,6 @@ build:
     - sqlite3 --version
     - psql --version
     - redis-server --version
-  #  - /var/lib/neo4j/bin/neo4j version
     - yum list rabbitmq-server | grep rabbitmq-serve
     - mongod --version
     - elasticsearch --version
